@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <div>
+    <header>
+      <h1>
+        Post-MAclone
+      </h1>
+    </header>
+    <form
+      name="search-form"
+    >
+      <input
+        placeholder="Request Endpoint Here"
+        value=""
+      />
+      <span>
+        <label>
+          <input
+            checked=""
+            name="method"
+            type="radio"
+            value="GET"
+          />
+          <span>
+            Get
+          </span>
+        </label>
+        <label>
+          <input
+            name="method"
+            type="radio"
+            value="POST"
+          />
+          <span>
+            Post
+          </span>
+        </label>
+        <label>
+          <input
+            name="method"
+            type="radio"
+            value="PUT"
+          />
+          <span>
+            Put
+          </span>
+        </label>
+        <label>
+          <input
+            name="method"
+            type="radio"
+            value="PATCH"
+          />
+          <span>
+            Patch
+          </span>
+        </label>
+        <label>
+          <input
+            name="method"
+            type="radio"
+            value="DELETE"
+          />
+          <span>
+            Delete
+          </span>
+        </label>
+      </span>
+      <label>
+        <span>
+          Raw JSON Request
+        </span>
+        <textarea
+          aria-label="json-request"
+        />
+      </label>
+      <button>
+        Submit Request
+      </button>
+    </form>
+    <div>
+      <h1>
+        Request Results:
+      </h1>
+      <pre>
+        []
+      </pre>
+    </div>
+  </div>
+</DocumentFragment>
+`;
