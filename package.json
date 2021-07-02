@@ -69,6 +69,6 @@
     "react-router-dom": "^5.2.0"
   },
   "jshintConfig":{
-    "esversion": 6
+    "esversion": 9
 }
 }
