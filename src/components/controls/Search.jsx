@@ -8,16 +8,37 @@ function Search({
   handleMethod,
   handleJson,
   url,
-  radioInput,
   json,
 }) {
   return (
     <Container style={{ marginTop: 20 }} fluid>
       <Form name="search-form" onSubmit={handleSubmit}>
-        <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-          <Form.Label column sm={1}>
-            API URL :
-          </Form.Label>
+        <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Col sm={1}>
+            <Form.Control
+              required
+              type="text"
+              as="select"
+              onChange={handleMethod}
+              name="selectedFromBucket"
+            >
+              <option key={0} value="GET">
+                GET
+              </option>
+              <option key={1} value="POST">
+                POST
+              </option>
+              <option key={2} value="PUT">
+                PUT
+              </option>
+              <option key={3} value="PATCH">
+                PATCH
+              </option>
+              <option key={4} value="DELETE">
+                DELETE
+              </option>
+            </Form.Control>
+          </Col>
           <Col sm={10}>
             <Form.Control
               placeholder="https://www.someUrl.com"
@@ -31,68 +52,6 @@ function Search({
             </Button>
           </Col>
         </Form.Group>
-        <fieldset>
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label as="legend" column sm={2}>
-              HTTP verb:
-            </Form.Label>
-            <Form.Check
-              column
-              sm={2}
-              type="radio"
-              label="GET"
-              name="method"
-              value="GET"
-              checked={radioInput === 'GET'}
-              onChange={handleMethod}
-              id="formHorizontalRadios1"
-            />
-            <Form.Check
-              column
-              sm={2}
-              type="radio"
-              name="method"
-              value="POST"
-              label="POST"
-              checked={radioInput === 'POST'}
-              onChange={handleMethod}
-              id="formHorizontalRadios2"
-            />
-            <Form.Check
-              column
-              sm={2}
-              type="radio"
-              name="method"
-              value="PUT"
-              label="PUT"
-              checked={radioInput === 'PUT'}
-              onChange={handleMethod}
-              id="formHorizontalRadios3"
-            />
-            <Form.Check
-              column
-              sm={2}
-              type="radio"
-              name="method"
-              value="PATCH"
-              label="PATCH"
-              checked={radioInput === 'PATCH'}
-              onChange={handleMethod}
-              id="formHorizontalRadios4"
-            />
-            <Form.Check
-              column
-              sm={2}
-              type="radio"
-              name="method"
-              value="DELETE"
-              label="DELETE"
-              checked={radioInput === 'DELETE'}
-              onChange={handleMethod}
-              id="formHorizontalRadios4"
-            />
-          </Form.Group>
-        </fieldset>
         <Form.Control
           as="textarea"
           placeholder="Raw JSON Request"
