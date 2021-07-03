@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Search from '../components/controls/Search';
 import Results from '../components/display/Results';
 import { Request } from '../services/request-utils';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 function PostPage() {
   const [url, setUrl] = useState('');
@@ -24,21 +26,23 @@ function PostPage() {
     setReq(e.target.value);
   };
   return (
-    <div>
-      <header>
-        <h1>Post-MAclone</h1>
-      </header>
-      <Search
-        handleSubmit={handleSubmit}
-        handleUrlChange={handleUrlChange}
-        handleMethod={handleMethod}
-        handleJson={handleJson}
-        url={url}
-        radioInput={method}
-        json={req}
-      />
-      <Results results={results} />
-    </div>
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home"> Postman Clone</Navbar.Brand>
+      </Navbar>
+      <Container fluid>
+        <Search
+          handleSubmit={handleSubmit}
+          handleUrlChange={handleUrlChange}
+          handleMethod={handleMethod}
+          handleJson={handleJson}
+          url={url}
+          radioInput={method}
+          json={req}
+        />
+        <Results results={results} />
+      </Container>
+    </>
   );
 }
 
