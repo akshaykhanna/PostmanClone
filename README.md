@@ -1,6 +1,6 @@
 # Postman Clone
 
-Postman Clone is built via react and can be used to make HTTP request and view the response for the same.
+Postman Clone is built using react and can be used to make HTTP request and view the response for the same.
 
 ## Available Scripts
 
