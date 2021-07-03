@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactJson from 'react-json-view';
+import { Container } from 'react-bootstrap';
 
 function Results({ results }) {
   return (
-    <div>
-      <h1>Request Results:</h1>
-      <pre>{JSON.stringify(results, null, 2)}</pre>
-    </div>
+    <Container style={{ marginTop: 20 }} fluid>
+      <h5>Response:</h5>
+      {results && <ReactJson src={results} />}
+    </Container>
   );
 }
 
